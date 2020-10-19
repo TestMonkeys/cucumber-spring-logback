@@ -11,7 +11,18 @@ public void logAMessage() {
 }
 ```
 And this will be automatically added to the output of this step:
+
 ![Image of the report](https://github.com/TestMonkeys/cucumber-spring-logback/blob/master/util/CucumberReportSample.PNG)
+
+To test this project - clone it then run:
+```
+mvn test -Dtest=org.testmonkeys.test.cucumber.spring.logback.TestRunner
+```
+this will generate the cucumber.json report, then run 
+```
+mvn cucumber-reporting:generate
+```
+to generate the masterthought html report in target/report/
 
 
 # integration
