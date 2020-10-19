@@ -3,8 +3,18 @@ This is a cucumber-jvm, spring and logback integration to provide an appender th
 
 This helps make use of logs provided by other libraries, as well as using logs in your tests, customizing the log level wanted in the report.
 
+To use this you just need to log some information using your logger:
+```
+@When("I log a message")
+public void logAMessage() {
+  log.info("LoggedInformation");
+}
+```
+And this will be automatically added to the output of this step:
+![Image of the report](https://github.com/TestMonkeys/cucumber-spring-logback/blob/master/util/CucumberReportSample.PNG)
 
-# usage
+
+# integration
 Either copy the classes defined in java/main or use the project packaged
 
 To tie it to your tests:
