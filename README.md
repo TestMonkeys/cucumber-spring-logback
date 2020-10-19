@@ -25,7 +25,7 @@ mvn cucumber-reporting:generate
 to generate the masterthought html report in target/report/
 
 
-# integration
+# integration in your project
 Either copy the classes defined in java/main or use the project packaged
 
 To tie it to your tests:
