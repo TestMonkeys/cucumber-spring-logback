@@ -6,8 +6,8 @@ jobs:
       - image: circleci/openjdk:stretch
     steps:
       - checkout
-      - run: ./mvn test -Dtest=org.testmonkeys.test.cucumber.spring.logback.TestRunner
-      - run: ./mvn test -Dtest=org.testmonkeys.test.cucumber.spring.logback.TestOutput 
+      - run: mvn test -Dtest=org.testmonkeys.test.cucumber.spring.logback.TestRunner
+      - run: mvn test -Dtest=org.testmonkeys.test.cucumber.spring.logback.TestOutput 
 
 
 workflows:
