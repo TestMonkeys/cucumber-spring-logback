@@ -1,4 +1,6 @@
 # cucumber-spring-logback
+[![TestMonkeys](https://circleci.com/gh/TestMonkeys/cucumber-spring-logback.svg?style=svg)](https://circleci.com/gh/TestMonkeys/cucumber-spring-logback)
+
 This is a cucumber-jvm, spring and logback integration to provide an appender that will write logs to the cucumber report. 
 
 This helps make use of logs provided by other libraries, as well as using logs in your tests, customizing the log level wanted in the report.
