@@ -1,4 +1,4 @@
-package org.testmonkeys.cucumber.spring.logging;
+package org.testmonkeys.cucumber.spring.logback;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

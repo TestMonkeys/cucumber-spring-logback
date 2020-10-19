@@ -1,4 +1,4 @@
-package org.testmonkeys.cucumber.spring.logging;
+package org.testmonkeys.cucumber.spring.logback;
 
 import io.cucumber.java.Scenario;
 import io.cucumber.spring.ScenarioScope;

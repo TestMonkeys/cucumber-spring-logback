@@ -1,12 +1,11 @@
-package org.testmonkeys.demo.stepDefs;
+package org.testmonkeys.test.cucumber.spring.logback.stepDefs;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.testmonkeys.cucumber.spring.logging.CucumberScenarioContext;
+import org.testmonkeys.cucumber.spring.logback.CucumberScenarioContext;
 
 public class BasicSteps {
 

@@ -1,4 +1,4 @@
-package org.testmonkeys.demo;
+package org.testmonkeys.test.cucumber.spring.logback;
 
 import lombok.SneakyThrows;
 import org.junit.Assert;
