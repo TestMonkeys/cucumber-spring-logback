@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-    <appender name="Cucumber" class="org.testmonkeys.cucumber.spring.logback.CucumberScenarioAppender"/>
+    <appender name="Cucumber" class="org.testmonkeys.cucumber.spring.logback.CucumberScenarioAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{100}:[%thread] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
 
 
     <root leve="info">
