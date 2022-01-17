@@ -18,18 +18,18 @@ public class CucumberScenarioAppender extends AppenderBase<ILoggingEvent> {
 
     @Override
     protected void append(ILoggingEvent iLoggingEvent) {
-        if (!this.encoder.isStarted())encoder.start();
-        byte[] encoded = encoder.encode(iLoggingEvent);
-        Scenario cukeScenario = getScenario();
-        if (cukeScenario != null)
-            cukeScenario.log(new String(encoded));
+        String message = this.encode(iLoggingEvent);
+        Scenario scenario = getScenario();
+        if (scenario != null) scenario.log(message);
     }
 
-    public void setEncoder(PatternLayoutEncoder encoder){
+    private String encode(ILoggingEvent loggingEvent) {
+        if (this.encoder == null) return loggingEvent.getFormattedMessage();
+        return new String(this.encoder.encode(loggingEvent));
+    }
+
+    public void setEncoder(PatternLayoutEncoder encoder) {
         this.encoder = encoder;
-    }
-
-    public PatternLayoutEncoder getEncoder(){
-        return this.encoder;
+        this.encoder.start();
     }
 }
