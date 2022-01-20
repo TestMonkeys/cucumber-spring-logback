@@ -1,4 +1,12 @@
-version: 2.0
+version: 2
+references:
+  workspace_root: &workspace_root
+                    /tmp/workspace
+
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+
 
 jobs:
   test:
@@ -9,6 +17,41 @@ jobs:
       - run: mvn test -Dtest=org.testmonkeys.test.cucumber.spring.logback.TestRunner
       - run: mvn test -Dtest=org.testmonkeys.test.cucumber.spring.logback.TestOutput 
 
+  create-package:
+    docker:
+      - image: circleci/openjdk:stretch
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: Update version as per tag
+          command: |
+            export MAVEN_RELEASE_VERSION="$(echo $CIRCLE_TAG | cut -c 2-)"
+            mvn versions:set -DnewVersion=$MAVEN_RELEASE_VERSION -f pom.xml
+            mvn versions:commit
+
+      - run:
+          name: Build packages
+          command: |
+            export MAVEN_RELEASE_VERSION="$(echo $CIRCLE_TAG | cut -c 2-)"
+            mvn clean package -DskipTests=true
+            mkdir ~/repo/releasePackage
+            mkdir -p /tmp/workspace/release/jars
+            mv ~/repo/target/*.jar /tmp/workspace/release/jars/
+            export POM_NAME_1='/tmp/workspace/release/jars/cucumber-spring-logback-'
+            export POM_NAME_2='.pom'
+            export POM_FULL_NAME="$POM_NAME_1$MAVEN_RELEASE_VERSION$POM_NAME_2"
+            cp ~/repo/pom.xml $POM_FULL_NAME
+
+      - persist_to_workspace:
+          root: *workspace_root
+          paths:
+            - release/jars/
+
+      - store_artifacts:
+          path: ~/repo/target
 
 workflows:
   version: 2
@@ -16,3 +59,6 @@ workflows:
   build-then-test:
     jobs:
       - test
+      - create-package:
+          requires:
+            - test
