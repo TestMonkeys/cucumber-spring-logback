@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <name>cucumber-spring-logback</name>
@@ -30,7 +28,7 @@
         <connection>scm:git:git@github.com:TestMonkeys/cucumber-spring-logback.git</connection>
         <developerConnection>scm:git:git@github.com:TestMonkeys/cucumber-spring-logback.git</developerConnection>
         <url>https://github.com/TestMonkeys/cucumber-spring-logback.git</url>
-        <tag>HEAD</tag>
+        <tag>v1.7.0</tag>
     </scm>
 
     <distributionManagement>
@@ -42,7 +40,7 @@
 
     <groupId>org.testmonkeys</groupId>
     <artifactId>cucumber-spring-logback</artifactId>
-    <version>1.7.0-SNAPSHOT</version>
+    <version>1.7.0</version>
 
     <dependencies>
         <dependency>
