@@ -173,6 +173,7 @@
                 <configuration>
                     <releaseProfiles>gpg-sign</releaseProfiles>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <arguments>-Dmaven.test.skipTests=true -Dmaven.test.skip=true</arguments>
                 </configuration>
             </plugin>
         </plugins>
