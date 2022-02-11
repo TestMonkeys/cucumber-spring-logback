@@ -28,7 +28,7 @@
         <connection>scm:git:git@github.com:TestMonkeys/cucumber-spring-logback.git</connection>
         <developerConnection>scm:git:git@github.com:TestMonkeys/cucumber-spring-logback.git</developerConnection>
         <url>https://github.com/TestMonkeys/cucumber-spring-logback.git</url>
-        <tag>HEAD</tag>
+        <tag>v1.7.2</tag>
     </scm>
 
     <distributionManagement>
@@ -40,7 +40,7 @@
 
     <groupId>org.testmonkeys</groupId>
     <artifactId>cucumber-spring-logback</artifactId>
-    <version>1.7.2-SNAPSHOT</version>
+    <version>1.7.2</version>
 
     <dependencies>
         <dependency>
