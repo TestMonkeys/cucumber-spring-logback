@@ -100,7 +100,7 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>5.7.0</version>
+                <version>5.7.1</version>
                 <configuration>
                     <projectName>cucumberLogging</projectName>
                     <skip>false</skip>
