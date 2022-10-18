@@ -4,7 +4,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-
     ignore:
       - dependency-name: "ch.qos.logback:logback-classic"
         versions: [ "1.4.x" ]
