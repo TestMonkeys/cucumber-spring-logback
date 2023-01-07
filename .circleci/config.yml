@@ -23,7 +23,9 @@ workflows:
       - test:
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - spring_boot_3
       - circleci-maven-release-orb/run-maven-release:
           requires:
             - test
