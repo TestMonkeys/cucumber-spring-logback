@@ -40,7 +40,7 @@ jobs:
   ##################################################################
   test:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: cimg/openjdk:19.0.1
     working_directory: ~/repo
     environment:
       # Customize the JVM maximum heap limit
