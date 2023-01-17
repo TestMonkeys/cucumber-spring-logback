@@ -2,6 +2,11 @@ version: 2.1
 orbs:
   circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@0.0.16
 
+executors:
+  openjdk8:
+    docker:
+      - image: cimg/openjdk:8.0
+
 references:
   workspace_root: &workspace_root
                     /tmp/workspace
@@ -28,6 +33,7 @@ workflows:
           requires:
             - test
           ssh-fingerprints: 'a5:27:08:2f:b8:1f:69:b6:31:4a:67:25:fd:5b:53:46'
+          executor: openjdk8
 
 
 jobs:
