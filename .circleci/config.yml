@@ -30,7 +30,9 @@ workflows:
           requires:
             - test
           ssh-fingerprints: 'a5:27:08:2f:b8:1f:69:b6:31:4a:67:25:fd:5b:53:46'
-
+          executor:
+            docker:
+              - image: cimg/openjdk:17.0
 
 jobs:
   ##################################################################
